@@ -1,0 +1,18 @@
+[project]
+name = "omni-ai-agent"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn>=0.20.0",
+    "langgraph",
+    "langchain",
+    "litellm",
+    "python-telegram-bot",
+    "slack-bolt",
+    "twilio",
+    # add others as needed
+]
+
+[tool.vercel]
+entrypoint = "backend.main:app"
