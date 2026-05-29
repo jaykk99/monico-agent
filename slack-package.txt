@@ -1,0 +1,12 @@
+Monico Agent - Slack Package
+
+Repo: https://github.com/jaykk99/monico-agent
+
+Setup:
+1. Add your SLACK_TOKEN to environment variables
+2. The agent will connect to Slack using the Bolt framework
+3. Send messages to your bot to trigger tasks
+
+Full code in messaging/slack_handler.py in the repo.
+
+Download the full repo: https://github.com/jaykk99/monico-agent/archive/refs/heads/main.zip
