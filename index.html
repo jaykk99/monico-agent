@@ -6,53 +6,55 @@
     <title>monico.ai</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
         body { font-family: 'Inter', system_ui, sans-serif; }
         .heading { font-family: 'Space Grotesk', sans-serif; }
         .red-accent { color: #e63939; }
+        .card-hover:hover { transform: translateY(-4px); transition: all 0.3s; }
     </style>
 </head>
 <body class="bg-black text-zinc-100">
-    <div class="max-w-4xl mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto px-6 py-12">
         <!-- Header -->
         <div class="flex justify-between items-center mb-12">
             <div>
-                <h1 class="heading text-6xl font-semibold tracking-tighter text-white">monico<span class="red-accent">.ai</span></h1>
-                <p class="text-red-400 mt-1 text-xl">Local AI Agent Platform</p>
+                <h1 class="heading text-7xl font-semibold tracking-tighter text-white">monico<span class="red-accent">.ai</span></h1>
+                <p class="text-red-400 mt-1 text-2xl">Advanced Local AI Agent Platform</p>
             </div>
         </div>
 
         <!-- Warning -->
-        <div class="bg-red-950 border border-red-900 text-red-300 px-6 py-4 rounded-2xl mb-10">
-            ⚠️ The old Omni bot site is broken (404). This is the new monico.ai platform.
+        <div class="bg-red-950 border border-red-800 text-red-300 px-8 py-5 rounded-3xl mb-12 text-lg">
+            ⚠️ The old Omni bot / previous site is broken (404). This is the new monico.ai platform.
         </div>
 
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 mb-10">
-            <h2 class="text-3xl font-semibold mb-8 text-white">Run Locally</h2>
+        <!-- Local Install -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 mb-12">
+            <div class="flex justify-between items-end mb-8">
+                <h2 class="text-4xl font-semibold text-white">Run Locally</h2>
+                <span class="text-red-400 text-xl">Cloud version coming soon →</span>
+            </div>
             
-            <div class="grid md:grid-cols-3 gap-6">
-                <!-- Mac -->
-                <div class="bg-black border border-zinc-800 rounded-2xl p-6 hover:border-red-500 transition-colors">
-                    <div class="text-xl font-medium mb-4 text-white">Mac</div>
-                    <pre class="bg-zinc-900 text-red-300 p-5 rounded-xl text-sm overflow-auto font-mono leading-relaxed">git clone https://github.com/jaykk99/monico-agent.git
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-black border border-zinc-700 rounded-2xl p-8 card-hover">
+                    <div class="text-2xl font-semibold mb-6 text-white">Mac</div>
+                    <pre class="bg-zinc-900 p-6 rounded-2xl text-red-300 font-mono text-sm overflow-auto">git clone https://github.com/jaykk99/monico-agent.git
 cd monico-agent
 pip install -r requirements.txt
 uvicorn app:main --reload --port 8000</pre>
                 </div>
 
-                <!-- Linux -->
-                <div class="bg-black border border-zinc-800 rounded-2xl p-6 hover:border-red-500 transition-colors">
-                    <div class="text-xl font-medium mb-4 text-white">Linux</div>
-                    <pre class="bg-zinc-900 text-red-300 p-5 rounded-xl text-sm overflow-auto font-mono leading-relaxed">git clone https://github.com/jaykk99/monico-agent.git
+                <div class="bg-black border border-zinc-700 rounded-2xl p-8 card-hover">
+                    <div class="text-2xl font-semibold mb-6 text-white">Linux</div>
+                    <pre class="bg-zinc-900 p-6 rounded-2xl text-red-300 font-mono text-sm overflow-auto">git clone https://github.com/jaykk99/monico-agent.git
 cd monico-agent
 pip install -r requirements.txt
 uvicorn app:main --reload --port 8000</pre>
                 </div>
 
-                <!-- Windows -->
-                <div class="bg-black border border-zinc-800 rounded-2xl p-6 hover:border-red-500 transition-colors">
-                    <div class="text-xl font-medium mb-4 text-white">Windows</div>
-                    <pre class="bg-zinc-900 text-red-300 p-5 rounded-xl text-sm overflow-auto font-mono leading-relaxed">git clone https://github.com/jaykk99/monico-agent.git
+                <div class="bg-black border border-zinc-700 rounded-2xl p-8 card-hover">
+                    <div class="text-2xl font-semibold mb-6 text-white">Windows</div>
+                    <pre class="bg-zinc-900 p-6 rounded-2xl text-red-300 font-mono text-sm overflow-auto">git clone https://github.com/jaykk99/monico-agent.git
 cd monico-agent
 pip install -r requirements.txt
 uvicorn app:main --reload --port 8000</pre>
@@ -61,37 +63,45 @@ uvicorn app:main --reload --port 8000</pre>
         </div>
 
         <!-- Integrations -->
-        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10">
-            <h2 class="text-3xl font-semibold mb-8 text-white">Integrations</h2>
-            <div class="space-y-6">
-                <div class="flex justify-between items-center bg-black p-6 rounded-2xl border border-zinc-800">
-                    <div>
-                        <div class="font-medium text-lg">Telegram Bot</div>
-                        <div class="text-zinc-400">Run as a Telegram bot</div>
-                    </div>
-                    <code class="bg-zinc-900 px-5 py-3 rounded-xl text-red-400 font-mono">python main.py --telegram</code>
+        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10 mb-16">
+            <h2 class="text-4xl font-semibold mb-8 text-white">Integrations</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-black p-8 rounded-3xl border border-zinc-700">
+                    <div class="text-xl font-semibold mb-3">Telegram Bot</div>
+                    <code class="block bg-zinc-900 p-4 rounded-2xl text-red-400 font-mono">python main.py --telegram</code>
                 </div>
-
-                <div class="flex justify-between items-center bg-black p-6 rounded-2xl border border-zinc-800">
-                    <div>
-                        <div class="font-medium text-lg">Slack</div>
-                        <div class="text-zinc-400">Connect to Slack workspace</div>
-                    </div>
-                    <code class="bg-zinc-900 px-5 py-3 rounded-xl text-red-400 font-mono">python main.py --slack</code>
+                <div class="bg-black p-8 rounded-3xl border border-zinc-700">
+                    <div class="text-xl font-semibold mb-3">Slack</div>
+                    <code class="block bg-zinc-900 p-4 rounded-2xl text-red-400 font-mono">python main.py --slack</code>
                 </div>
-
-                <div class="flex justify-between items-center bg-black p-6 rounded-2xl border border-zinc-800">
-                    <div>
-                        <div class="font-medium text-lg">SMS</div>
-                        <div class="text-zinc-400">Via Twilio</div>
-                    </div>
-                    <code class="bg-zinc-900 px-5 py-3 rounded-xl text-red-400 font-mono">python main.py --sms</code>
+                <div class="bg-black p-8 rounded-3xl border border-zinc-700">
+                    <div class="text-xl font-semibold mb-3">SMS (Twilio)</div>
+                    <code class="block bg-zinc-900 p-4 rounded-2xl text-red-400 font-mono">python main.py --sms</code>
                 </div>
             </div>
         </div>
 
-        <div class="text-center text-zinc-500 text-sm mt-16">
-            monico.ai — Local First AI Agent
+        <!-- Models Section - Full list at bottom like old Versailles/Omni style -->
+        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-10">
+            <h2 class="text-4xl font-semibold mb-10 text-white text-center">Supported Models & Providers</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">GPT-4o</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Claude 3.5</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Llama 3.1 405B</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Grok</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Gemini 1.5</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Mistral Large</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Command R+</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">DeepSeek</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Qwen 2</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Phi-3</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center">Local LLMs</div>
+                <div class="bg-black border border-zinc-700 rounded-2xl p-5 text-center text-red-400 font-medium">+ Many More</div>
+            </div>
+        </div>
+
+        <div class="text-center text-zinc-500 mt-20">
+            monico.ai — Local First • Private • Powerful
         </div>
     </div>
 
